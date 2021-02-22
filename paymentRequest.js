@@ -73,8 +73,8 @@ function onBuyClicked() {
 
   const options = {
     requestShipping: false,
-    requestPayerName: false,
-    requestPayerPhone: false,
+    requestPayerName: true,
+    requestPayerPhone: true,
     requestPayerEmail: false,
     shippingType: 'shipping',
   };
