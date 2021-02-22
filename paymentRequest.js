@@ -93,7 +93,7 @@ function onBuyClicked() {
     return;
   }
 
-  request.addEventListener('shippingaddresschange', function(evt) {
+//   request.addEventListener('shippingaddresschange', function(evt) {
 //     evt.updateWith(new Promise(function(resolve) {
 //       fetch('/ship', {
 //         method: 'POST',
@@ -118,7 +118,7 @@ function onBuyClicked() {
 //             console.log('Unable to calculate shipping options. ' + err);
 //           });
 //     }));
-  });
+//   });
 
   request.addEventListener('shippingoptionchange', function(evt) {
     evt.updateWith(new Promise(function(resolve) {
