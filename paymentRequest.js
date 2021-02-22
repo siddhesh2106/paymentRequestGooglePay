@@ -188,6 +188,7 @@ function checkCanMakePayment(request) {
 function showPaymentUI(request, canMakePayment) {
   // Redirect to play store if can't make payment.
   if (!canMakePayment) {
+    document.getElementById('url').value = "cannot make payment from this browser";
     redirectToPlayStore();
     return;
   } 
