@@ -21,6 +21,8 @@ function readSupportedInstruments() {
   formValue['tr'] = document.getElementById('tr').value;
   formValue['tid'] = document.getElementById('tid').value;
   formValue['url'] = document.getElementById('url').value;
+  formValue['apiVersion'] = 2;
+  formValue['apiVersionMinor'] = 0;
   return formValue;
 }
 
@@ -92,30 +94,30 @@ function onBuyClicked() {
   }
 
   request.addEventListener('shippingaddresschange', function(evt) {
-    evt.updateWith(new Promise(function(resolve) {
-      fetch('/ship', {
-        method: 'POST',
-        headers: new Headers({'Content-Type': 'application/json'}),
-        body: addressToJsonString(request.shippingAddress),
-        credentials: 'include',
-      })
-          .then(function(options) {
-            if (options.ok) {
-              return options.json();
-            }
-            console.log('Unable to calculate shipping options.');
-          })
-          .then(function(optionsJson) {
-            if (optionsJson.status === 'success') {
-              updateShipping(details, optionsJson.shippingOptions, resolve);
-            } else {
-              console.log('Unable to calculate shipping options.');
-            }
-          })
-          .catch(function(err) {
-            console.log('Unable to calculate shipping options. ' + err);
-          });
-    }));
+//     evt.updateWith(new Promise(function(resolve) {
+//       fetch('/ship', {
+//         method: 'POST',
+//         headers: new Headers({'Content-Type': 'application/json'}),
+//         body: addressToJsonString(request.shippingAddress),
+//         credentials: 'include',
+//       })
+//           .then(function(options) {
+//             if (options.ok) {
+//               return options.json();
+//             }
+//             console.log('Unable to calculate shipping options.');
+//           })
+//           .then(function(optionsJson) {
+//             if (optionsJson.status === 'success') {
+//               updateShipping(details, optionsJson.shippingOptions, resolve);
+//             } else {
+//               console.log('Unable to calculate shipping options.');
+//             }
+//           })
+//           .catch(function(err) {
+//             console.log('Unable to calculate shipping options. ' + err);
+//           });
+//     }));
   });
 
   request.addEventListener('shippingoptionchange', function(evt) {
