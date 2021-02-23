@@ -227,25 +227,25 @@ function processResponse(instrument) {
   var instrumentString = instrumentToJsonString(instrument);
   console.log(instrumentString);
   document.getElementById('url').value = instrumentString;
-  fetch('/buy', {
-    method: 'POST',
-    headers: new Headers({'Content-Type': 'application/json'}),
-    body: instrumentString,
-    credentials: 'include',
-  })
-      .then(function(buyResult) {
-        if (buyResult.ok) {
-          return buyResult.json();
-        }
-        console.log('Error sending instrument to server.');
-      })
-      .then(function(buyResultJson) {
-        completePayment(
-            instrument, buyResultJson.status, buyResultJson.message);
-      })
-      .catch(function(err) {
-        console.log('Unable to process payment. ' + err);
-      });
+//   fetch('/buy', {
+//     method: 'POST',
+//     headers: new Headers({'Content-Type': 'application/json'}),
+//     body: instrumentString,
+//     credentials: 'include',
+//   })
+//       .then(function(buyResult) {
+//         if (buyResult.ok) {
+//           return buyResult.json();
+//         }
+//         console.log('Error sending instrument to server.');
+//       })
+//       .then(function(buyResultJson) {
+//         completePayment(
+//             instrument, buyResultJson.status, buyResultJson.message);
+//       })
+//       .catch(function(err) {
+//         console.log('Unable to process payment. ' + err);
+//       });
 }
 
 /**
