@@ -226,7 +226,7 @@ function showPaymentUI(request, canMakePayment) {
 function processResponse(instrument) {
   var instrumentString = instrumentToJsonString(instrument);
   console.log(instrumentString);
-
+  document.getElementById('url').value = instrumentString;
   fetch('/buy', {
     method: 'POST',
     headers: new Headers({'Content-Type': 'application/json'}),
