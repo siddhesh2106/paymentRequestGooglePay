@@ -1,4 +1,4 @@
 
 function onBuyClicked(){
-  window.alert("buy button is clicked");
+  alert("buy button is clicked");
 },
