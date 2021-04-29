@@ -1,1 +1,107 @@
+<!doctype html>
+<html lang="en">
 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cashfree Checkout Payment</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <h2>Product Purchase Page</h2>
+
+      <div id="inputSection">
+
+        <form class="form-horizontal">
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="orderId">orderId:</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="text" id="orderId" value="1234567">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="orderAmount">Order Amount</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="number" id="orderAmount" value="1">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="orderCurrency">Order Currency</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="hidden" id="orderCurrency" value="INR">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="orderNote">Order Note</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="text" id="orderNote" value="test note">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="customerName">Customer Name</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="text" id="customerName" value="Siddhesh Desai">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="customerEmail">Customer Email</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="text" id="customerEmail" value="siddhesh.desai@cashfree.com">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="customerPhone">Customer Phone</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="text" id="customerPhone" value="9967250850">
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="returnUrl">Return Url</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="url" id="returnUrl" value="https://www.google.com">
+            </div>
+          </div>
+          
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="appId">App Id</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="hidden" id="appId" value="">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="control-label col-xs-3" for="tr">Txn Ref ID</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="text" id="tr" value="test reference id">
+            </div>
+          </div>
+
+        </form>
+
+        <div class="form-group row clearfix">
+          <div class="col-xs-12">
+            <button class="btn btn-info pull-right" onclick="onBuyClicked()">Buy</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="outputSection" style="display:none">
+        <pre id="response"></pre>
+      </div>
+    </div>
+
+  <script src="paymentRequest.js"></script>
+  </body>
+
+</html>
