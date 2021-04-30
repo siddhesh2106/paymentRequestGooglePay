@@ -7,17 +7,26 @@
     <title>Cashfree Checkout Payment</title>
     <link rel="icon" type="image/png" href="favicon.ico">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="cashfreeCheckout.js"></script>
+    <!--script src="cashfreeCheckout.js"></script-->
   </head>
 
   <body>
+    
+    <script language="javascript" type="text/javascript">
+      function onBuyClicked()
+      {
+        console.log("form poster");
+        var form = document.froms["OrderForm"];
+        form.submit();
+      }
+    </script>
 
     <div class="container">
       <h2>Product Purchase Page</h2>
 
       <div id="inputSection">
 
-        <form class="form-horizontal">
+        <form class="form-horizontal" name="OrderForm" method="POST", action="cashfreeCheckout.php">
           <div class="form-group row">
             <label class="control-label col-xs-3" for="orderId">orderId:</label>
             <div class="col-xs-9">
