@@ -26,7 +26,7 @@
 
       <div id="inputSection">
 
-        <form class="form-horizontal" id="OrderForm" method="post", action="cashfreeCheckoutPage.php">
+        <form class="form-horizontal" id="OrderForm" method="post", action="https://test.cashfree.com/billpay/checkout/post/submit">
           <div class="form-group row">
             <label class="control-label col-xs-3" for="orderId">orderId:</label>
             <div class="col-xs-9">
@@ -83,11 +83,23 @@
           </div>
           
           <div class="form-group row">
+            <label class="control-label col-xs-3" for="notifyUrl">Notify Url</label>
+            <div class="col-xs-9">
+              <input class="form-control" type="url" id="notifyUrl" value="https://www.google.com">
+            </div>
+          </div>   
+          
+          <div class="form-group row">
             <div class="col-xs-9">
               <input class="form-control" type="hidden" id="appId" value="">
             </div>
           </div>
 
+          <div class="form-group row">
+            <div class="col-xs-9">
+              <input class="form-control" type="hidden" id="signature" value="">
+            </div>
+          </div>
 
         </form>
 
